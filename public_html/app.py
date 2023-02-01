@@ -16,7 +16,6 @@ def getConfig():
         print(err)
         
 CONFIG        = getConfig()
-AUTH_URL      = CONFIG.get('AUTH_URL')
 CLIENT_ID     = CONFIG.get('CLIENT_ID')
 CLIENT_SECRET = CONFIG.get('CLIENT_SECRET')  
 USER_ID       = CONFIG.get('USER_ID')

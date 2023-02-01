@@ -25,11 +25,12 @@ def getConfig():
         
 CONFIG        = getConfig()
 AUTH_URL      = CONFIG.get('AUTH_URL')
-CLIENT_ID     = CONFIG.get('CLIENT_ID')
-CLIENT_SECRET = CONFIG.get('CLIENT_SECRET')  
+CLIENT_ID     = os.getenv('client_id')
+print(CLIENT_ID)
+CLIENT_SECRET = os.getenv('client_secret')  
 REDIRECT_URI  = CONFIG.get('REDIRECT_URI')   
 SCOPE         = CONFIG.get('SCOPE')
-REFRESH_TOKEN = CONFIG.get('REFRESH_TOKEN')
+REFRESH_TOKEN = os.getenv('refresh_token')
 # Create a state token to prevent request forgery.
 STATE = hashlib.sha256(os.urandom(1024)).hexdigest()
 
@@ -54,6 +55,7 @@ class refresh :
         r = requests.post(url=AUTH_URL ,headers=headers, params=payload )
         r_json = r.json()
         access_token = r_json['access_token']
+        print(access_token)
         return access_token
 
         

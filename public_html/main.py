@@ -11,7 +11,8 @@ def index():
         pass
         return Response('ok', status = 200)
     else:
-        return b'<h1>sddd</h1>'
+        pass
+    return b'<h1>sddd</h1>'
 
 
 def main():
